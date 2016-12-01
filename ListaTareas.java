@@ -72,10 +72,22 @@ public class ListaTareas
     public boolean hayTareasPendientes()
     {
         boolean tareasPendientes = false;
-        if (listaDeTareas.size() > 0)
+        if (getNumeroTareas() > 0)
         {
             tareasPendientes = true;
         }
         return tareasPendientes;
+    }
+    
+    /**
+     * Método que imprime todas las tareas existentes, una por línea
+     */
+    
+    public void mostrarTareas()
+    {
+        for (String tareas : listaDeTareas) 
+        {
+            System.out.println(tareas);
+        }
     }
 }
