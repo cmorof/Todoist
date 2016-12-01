@@ -43,9 +43,24 @@ public class ListaTareas
     
     public void eliminaTarea(int posicion)
     {
-        if (posicion >= 0 && posicion < listaDeTareas.size())
+        if (esValidoElIndice(posicion))
         {
             listaDeTareas.remove(posicion);
         }
+    }
+        
+    /**
+     * Método que comprueba si un índice es válido y devuelve true
+     * en caso afirmativo o false en otro caso
+     */
+    
+    public boolean esValidoElIndice(int indice)
+    {
+        boolean indiceValido = false;
+        if(indice >= 0 && indice < listaDeTareas.size())
+        {
+            indiceValido = true;
+        }
+        return indiceValido;
     }
 }
