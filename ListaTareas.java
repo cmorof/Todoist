@@ -104,6 +104,7 @@ public class ListaTareas
      * Muestra todas las tareas (una por línea) que contengan un determinado texto pasado
      * como parámetro con su numeración asociada correcta. Si no hay ninguna
      * tarea que contenga el texto indicado, se muestra un mensaje de error (SOLO UNO!!!!!)
+     * si hay tareas coincidentes, tras la lista, se muestra el múmero de tareas coincidentes.
      */
     
     public void mostrarTareasCoincidentes(String texto)
@@ -123,6 +124,10 @@ public class ListaTareas
         if( numeroCoincidencias == 0)
         {
             System.out.println("Error");
+        }
+        else
+        {
+            System.out.println(numeroCoincidencias + " tareas encontradas  en el texto " + texto);
         }
     }
 }
