@@ -41,8 +41,11 @@ public class ListaTareas
      * Si la posición indicada no es válida, no hace nada.
      */
     
-    public void eliminaTarea()
+    public void eliminaTarea(int posicion)
     {
-        
+        if (posicion >= 0 && posicion < listaDeTareas.size())
+        {
+            listaDeTareas.remove(posicion);
+        }
     }
 }
