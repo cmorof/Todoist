@@ -63,4 +63,19 @@ public class ListaTareas
         }
         return indiceValido;
     }
+    
+    /**
+     * Método que devuelve true en caso de que haya tareas por hacer, false
+     * en otro caso
+     */
+    
+    public boolean hayTareasPendientes()
+    {
+        boolean tareasPendientes = false;
+        if (listaDeTareas.size() > 0)
+        {
+            tareasPendientes = true;
+        }
+        return tareasPendientes;
+    }
 }
