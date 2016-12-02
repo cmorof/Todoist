@@ -130,4 +130,18 @@ public class ListaTareas
             System.out.println(numeroCoincidencias + " tareas encontradas  en el texto " + texto);
         }
     }
+    
+    /**
+     * Muestra todas las tareas existentes (usando un bucle while)
+     */
+    
+    public void mostrarTareas2()
+    {
+        int indice = 0;
+        while (indice < listaDeTareas.size()) 
+        {
+            System.out.println(listaDeTareas.get(indice));
+            indice = indice + 1;
+        }
+    }
 }
