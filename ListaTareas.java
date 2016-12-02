@@ -138,10 +138,10 @@ public class ListaTareas
     public void mostrarTareas2()
     {
         int indice = 0;
-        while (indice < listaDeTareas.size()) 
+        while (indice < getNumeroTareas()) 
         {
-            System.out.println(listaDeTareas.get(indice));
-            indice = indice + 1;
+            System.out.println((indice + 1) + ". " + listaDeTareas.get(indice));
+            indice++;
         }
     }
 }
