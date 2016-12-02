@@ -153,10 +153,30 @@ public class ListaTareas
     public void mostrarPrimerasTareas(int numeroTareasAMostrar)
     {
         int indice = 0;
-        while (indice < numeroTareasAMostrar && indice < listaDeTareas.size()) 
-        {   
+        while (indice < numeroTareasAMostrar && indice < listaDeTareas.size())
+        {
             System.out.println((indice + 1) + ". " + listaDeTareas.get(indice));
             indice++;
         }
+    }
+    
+    /**
+     * Devuelve true o false si hay al menos una tarea que contiene el texto indicado
+     * como parámetro
+     */
+    
+    public boolean hayTareasCoincidentes(String textoABuscar)
+    {
+        boolean coincidencia = false;
+        int posicion = 0;
+        while(posicion < listaDeTareas.size())
+        {
+            if(listaDeTareas.get(posicion).contains(textoABuscar))
+            {
+                coincidencia = true;
+            }
+            posicion++;
+        }
+        return coincidencia;
     }
 }
