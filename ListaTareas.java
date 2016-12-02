@@ -144,4 +144,19 @@ public class ListaTareas
             indice++;
         }
     }
+    
+    /**
+     * Muestra por pantalla las primeras n tareas indicadas como parámetro. En caso de que haya
+     * menos de n tareas se muestran todas.
+     */
+    
+    public void mostrarPrimerasTareas(int numeroTareasAMostrar)
+    {
+        int indice = 0;
+        while (indice < numeroTareasAMostrar && indice < listaDeTareas.size()) 
+        {   
+            System.out.println((indice + 1) + ". " + listaDeTareas.get(indice));
+            indice++;
+        }
+    }
 }
