@@ -162,21 +162,23 @@ public class ListaTareas
     
     /**
      * Devuelve true o false si hay al menos una tarea que contiene el texto indicado
-     * como parámetro
+     * como parámetro. -1 en caso contrario. NO MUESTRA NADA POR PANTALLA.
      */
     
-    public boolean hayTareasCoincidentes(String textoABuscar)
+    public int hayTareasCoincidentes(String textoABuscar)
     {
         boolean coincidencia = false;
         int posicion = 0;
-        while(posicion < listaDeTareas.size())
+        int valorDevolver = -1;        
+        while(posicion < listaDeTareas.size() && !coincidencia)
         {
             if(listaDeTareas.get(posicion).contains(textoABuscar))
             {
                 coincidencia = true;
+                valorDevolver = posicion;
             }
             posicion++;
         }
-        return coincidencia;
+        return valorDevolver;
     }
 }
