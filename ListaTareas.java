@@ -3,10 +3,12 @@ import java.util.ArrayList;
 public class ListaTareas
 {
     private ArrayList<String> listaDeTareas;
-
+    private ArrayList<Boolean> tareaTerminada;
+    
     public ListaTareas()
     {
         listaDeTareas = new ArrayList<String>();
+        tareaTerminada = new ArrayList<Boolean>();
     }
     
     /**
@@ -25,6 +27,7 @@ public class ListaTareas
     public void addTarea(String nuevaTarea)
     {
         listaDeTareas.add(nuevaTarea);
+        tareaTerminada.add(false);
     }
     
     /**
@@ -49,6 +52,7 @@ public class ListaTareas
         if (esValidoElIndice(posicion))
         {
             listaDeTareas.remove(posicion);
+            tareaTerminada.remove(posicion);
         }
     }
         
@@ -95,7 +99,14 @@ public class ListaTareas
         int posicion = 1;
         for (String tarea : listaDeTareas) 
         {
-            System.out.println(posicion + ". " + tarea);
+            String textoAMostrar = "";
+            textoAMostrar = textoAMostrar + posicion + ". ";
+            if (tareaTerminada.get(posicion - 1) == true)
+            {
+                textoAMostrar = textoAMostrar + "HECHO. ";
+            }
+            textoAMostrar = textoAMostrar + tarea;
+            System.out.println(textoAMostrar);
             posicion = posicion + 1;
         }
     }
@@ -180,5 +191,18 @@ public class ListaTareas
             posicion++;
         }
         return valorDevolver;
+    }
+    
+    /**
+     * Método que marca una tarea como completada.
+     * Método a prueba de errores.
+     * - numeroTarea es el número de la tarea empezando en 1
+     */
+    public void marcarComoCompletada (int numeroTarea)
+    {
+        if (numeroTarea > 0 && numeroTarea < listaDeTareas.size())
+        {
+            tareaTerminada.set(numeroTarea - 1, true);
+        }
     }
 }
